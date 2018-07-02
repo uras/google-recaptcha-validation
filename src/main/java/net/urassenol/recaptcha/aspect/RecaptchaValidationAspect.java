@@ -6,6 +6,7 @@ import net.urassenol.recaptcha.service.RecaptchaService;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -13,6 +14,7 @@ import java.util.stream.Collectors;
 
 @Aspect
 @Component
+@ConditionalOnProperty(name = "recaptcha.verification.enabled")
 public class RecaptchaValidationAspect {
 
     public static final String DELIMITER = ",";
