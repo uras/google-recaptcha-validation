@@ -17,9 +17,9 @@ import java.util.stream.Collectors;
 @ConditionalOnProperty(name = "recaptcha.verification.enabled")
 public class RecaptchaValidationAspect {
 
-    public static final String DELIMITER = ",";
-    public static final String PREFIX = "Recaptcha could not be verified due to following errors [";
-    public static final String SUFFIX = "]";
+    private static final String DELIMITER = ",";
+    private static final String PREFIX = "Recaptcha could not be verified due to following errors [";
+    private static final String SUFFIX = "]";
     private final RecaptchaService recaptchaService;
 
     @Autowired
